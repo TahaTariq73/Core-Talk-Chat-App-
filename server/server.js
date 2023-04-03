@@ -24,7 +24,7 @@ app.use("/api/message", messageRoutes);
 
 // ------------ Deployment ------------
 
-const root = path.join(__dirname, 'client', 'build');
+const root = '../client/build';
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(root));
