@@ -29,9 +29,9 @@ const root = path.join(__dirname, 'build');
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(root));
 
-  app.get("*", (req, res) =>
-    res.sendFile("index.html", { root })
-  )
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+  })
 } else {
   app.get("/", (req, res) => {
     res.send("API is running..");
